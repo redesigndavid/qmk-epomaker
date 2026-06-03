@@ -26,6 +26,7 @@ enum luma40_layers { _QWERTY, _FUNCTIONS, _SYMBOLS, _NUMBERS, _SPEC };
 #define CTL_ESC CTL_T(KC_ESC)
 #define LSHIFT KC_LSFT
 #define KC_SPEC MO(_SPEC)
+#define SPR_COL LT(_SPEC, KC_SCLN)
 
 
 enum custom_keycodes {
@@ -48,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_QWERTY] = LAYOUT_tkl_ansi(
         KC_TAB,   KC_Q,     KC_W,     KC_E,    KC_R,      KC_T,     KC_Y,      KC_U,     KC_I,     KC_O,     KC_P,     KC_BSPC,     \
-        CTL_ESC,  KC_A,     KC_S,     KC_D,    SUPER_F,   SUPER_G,  KC_H,      SUPER_J,  KC_K   ,  KC_L,     KC_SCLN,     KC_QUOT,     \
+        CTL_ESC,  KC_A,     KC_S,     KC_D,    SUPER_F,   SUPER_G,  KC_H,      SUPER_J,  KC_K   ,  KC_L,     SPR_COL,     KC_QUOT,     \
         LSHIFT,   KC_Z,     KC_X,     KC_C,    KC_V,      KC_B,     KC_N,      KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT ,     \
         KC_SPEC,  XXXXXXX,  XXXXXXX,  KC_LGUI, KC_LALT,             SPACE__,   KC_ENT,   QK_LEAD,  XXXXXXX,  XXXXXXX,  XXXXXXX
     ),
@@ -76,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SPEC] = LAYOUT_tkl_ansi(
         MD_USB ,  MD_BLE1, MD_BLE2,   MD_BLE3,  MD_24G ,  RM_NEXT,  _______,   _______,  _______,  _______,  _______,  _______,     \
-        _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,     \
+        _______,  DM_REC1,  DM_REC2,  DM_PLY1,  DM_PLY2,  DM_RSTP,  _______,   _______,  _______,  _______,  _______,  _______,     \
         _______,  _______,  _______,  _______,  _______,  _______,  RM_TOGG,   RM_SATD,  RM_HUED,  RM_VALU,  RM_SPDU, QK_BAT ,      \
         _______,  _______,  _______,  _______,  _______,            EE_CLR,    RM_SATU,  RM_HUED,  RM_VALD,  RM_SPDD, QK_BOOT
     ),
